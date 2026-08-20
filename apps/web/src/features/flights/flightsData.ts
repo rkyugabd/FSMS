@@ -18,20 +18,37 @@ export type FlightType =
   | "Simulator"
   | "Maintenance";
 
+/*
+ * =========================================================
+ * FLIGHT DATA MODEL
+ * =========================================================
+ *
+ * Important:
+ * The entire Flights feature uses:
+ *
+ * date
+ * departureTime
+ * arrivalTime
+ *
+ * Do NOT use departureDate.
+ */
 export type Flight = {
   id: string;
 
+  /*
+   * Flight identification
+   */
   flightNumber: string;
 
   /*
-   * Main schedule fields
+   * Schedule
    */
   date: string;
   departureTime: string;
   arrivalTime: string;
 
   /*
-   * Airport codes
+   * Airports
    */
   departureAirport: string;
   arrivalAirport: string;
@@ -43,10 +60,7 @@ export type Flight = {
   arrivalAirportName?: string;
 
   /*
-   * Aliases used by FlightDetails / EditFlightModal
-   *
-   * These are intentionally part of Flight so the entire
-   * flights feature uses one consistent data model.
+   * UI aliases
    */
   origin?: string;
   originName?: string;
@@ -66,17 +80,17 @@ export type Flight = {
   student: string;
 
   /*
-   * Flight classification
+   * Classification
    */
   flightType: FlightType;
 
   /*
-   * Training type alias used by the detail/edit UI
+   * Training UI alias
    */
   trainingType?: string;
 
   /*
-   * Flight status
+   * Status
    */
   status: FlightStatus;
 
@@ -99,8 +113,11 @@ export type Flight = {
 };
 
 /*
- * Main flight dataset
+ * =========================================================
+ * MAIN FLIGHT DATASET
+ * =========================================================
  */
+
 export const flightData: Flight[] = [
   {
     id: "FLT-1001",
@@ -113,12 +130,15 @@ export const flightData: Flight[] = [
     arrivalAirport: "CYHM",
 
     departureAirportName: "London International",
-    arrivalAirportName: "John C. Munro Hamilton International",
+    arrivalAirportName:
+      "John C. Munro Hamilton International",
 
     origin: "CYXU",
     originName: "London International",
+
     destination: "CYHM",
-    destinationName: "John C. Munro Hamilton International",
+    destinationName:
+      "John C. Munro Hamilton International",
 
     aircraft: "C-GABC",
     aircraftType: "Cessna 172",
@@ -150,12 +170,15 @@ export const flightData: Flight[] = [
     arrivalAirport: "CYKF",
 
     departureAirportName: "London International",
-    arrivalAirportName: "Region of Waterloo International",
+    arrivalAirportName:
+      "Region of Waterloo International",
 
     origin: "CYXU",
     originName: "London International",
+
     destination: "CYKF",
-    destinationName: "Region of Waterloo International",
+    destinationName:
+      "Region of Waterloo International",
 
     aircraft: "C-GDEF",
     aircraftType: "Cessna 172",
@@ -186,12 +209,15 @@ export const flightData: Flight[] = [
     arrivalAirport: "CYOO",
 
     departureAirportName: "London International",
-    arrivalAirportName: "Oshawa Executive Airport",
+    arrivalAirportName:
+      "Oshawa Executive Airport",
 
     origin: "CYXU",
     originName: "London International",
+
     destination: "CYOO",
-    destinationName: "Oshawa Executive Airport",
+    destinationName:
+      "Oshawa Executive Airport",
 
     aircraft: "C-GHIJ",
     aircraftType: "Diamond DA40",
@@ -222,12 +248,15 @@ export const flightData: Flight[] = [
     arrivalAirport: "CYKF",
 
     departureAirportName: "London International",
-    arrivalAirportName: "Region of Waterloo International",
+    arrivalAirportName:
+      "Region of Waterloo International",
 
     origin: "CYXU",
     originName: "London International",
+
     destination: "CYKF",
-    destinationName: "Region of Waterloo International",
+    destinationName:
+      "Region of Waterloo International",
 
     aircraft: "C-GKLM",
     aircraftType: "Piper Archer",
@@ -258,12 +287,15 @@ export const flightData: Flight[] = [
     arrivalAirport: "CYZR",
 
     departureAirportName: "London International",
-    arrivalAirportName: "Chris Hadfield Airport",
+    arrivalAirportName:
+      "Chris Hadfield Airport",
 
     origin: "CYXU",
     originName: "London International",
+
     destination: "CYZR",
-    destinationName: "Chris Hadfield Airport",
+    destinationName:
+      "Chris Hadfield Airport",
 
     aircraft: "C-GMNO",
     aircraftType: "Cessna 172",
@@ -294,12 +326,15 @@ export const flightData: Flight[] = [
     arrivalAirport: "CYHM",
 
     departureAirportName: "London International",
-    arrivalAirportName: "John C. Munro Hamilton International",
+    arrivalAirportName:
+      "John C. Munro Hamilton International",
 
     origin: "CYXU",
     originName: "London International",
+
     destination: "CYHM",
-    destinationName: "John C. Munro Hamilton International",
+    destinationName:
+      "John C. Munro Hamilton International",
 
     aircraft: "C-GPQR",
     aircraftType: "Diamond DA40",
@@ -330,12 +365,15 @@ export const flightData: Flight[] = [
     arrivalAirport: "CYKF",
 
     departureAirportName: "London International",
-    arrivalAirportName: "Region of Waterloo International",
+    arrivalAirportName:
+      "Region of Waterloo International",
 
     origin: "CYXU",
     originName: "London International",
+
     destination: "CYKF",
-    destinationName: "Region of Waterloo International",
+    destinationName:
+      "Region of Waterloo International",
 
     aircraft: "C-GSTU",
     aircraftType: "Cessna 172",
@@ -366,12 +404,15 @@ export const flightData: Flight[] = [
     arrivalAirport: "CYOO",
 
     departureAirportName: "London International",
-    arrivalAirportName: "Oshawa Executive Airport",
+    arrivalAirportName:
+      "Oshawa Executive Airport",
 
     origin: "CYXU",
     originName: "London International",
+
     destination: "CYOO",
-    destinationName: "Oshawa Executive Airport",
+    destinationName:
+      "Oshawa Executive Airport",
 
     aircraft: "C-GVWX",
     aircraftType: "Piper Archer",
@@ -402,12 +443,15 @@ export const flightData: Flight[] = [
     arrivalAirport: "CYKF",
 
     departureAirportName: "London International",
-    arrivalAirportName: "Region of Waterloo International",
+    arrivalAirportName:
+      "Region of Waterloo International",
 
     origin: "CYXU",
     originName: "London International",
+
     destination: "CYKF",
-    destinationName: "Region of Waterloo International",
+    destinationName:
+      "Region of Waterloo International",
 
     aircraft: "C-GYZA",
     aircraftType: "Cessna 172",
@@ -438,12 +482,15 @@ export const flightData: Flight[] = [
     arrivalAirport: "CYHM",
 
     departureAirportName: "London International",
-    arrivalAirportName: "John C. Munro Hamilton International",
+    arrivalAirportName:
+      "John C. Munro Hamilton International",
 
     origin: "CYXU",
     originName: "London International",
+
     destination: "CYHM",
-    destinationName: "John C. Munro Hamilton International",
+    destinationName:
+      "John C. Munro Hamilton International",
 
     aircraft: "C-GBCD",
     aircraftType: "Diamond DA40",
@@ -474,12 +521,15 @@ export const flightData: Flight[] = [
     arrivalAirport: "CYKF",
 
     departureAirportName: "London International",
-    arrivalAirportName: "Region of Waterloo International",
+    arrivalAirportName:
+      "Region of Waterloo International",
 
     origin: "CYXU",
     originName: "London International",
+
     destination: "CYKF",
-    destinationName: "Region of Waterloo International",
+    destinationName:
+      "Region of Waterloo International",
 
     aircraft: "C-GDEF",
     aircraftType: "Cessna 172",
@@ -510,12 +560,15 @@ export const flightData: Flight[] = [
     arrivalAirport: "CYHM",
 
     departureAirportName: "London International",
-    arrivalAirportName: "John C. Munro Hamilton International",
+    arrivalAirportName:
+      "John C. Munro Hamilton International",
 
     origin: "CYXU",
     originName: "London International",
+
     destination: "CYHM",
-    destinationName: "John C. Munro Hamilton International",
+    destinationName:
+      "John C. Munro Hamilton International",
 
     aircraft: "C-GHIJ",
     aircraftType: "Diamond DA40",
@@ -546,12 +599,15 @@ export const flightData: Flight[] = [
     arrivalAirport: "CYOO",
 
     departureAirportName: "London International",
-    arrivalAirportName: "Oshawa Executive Airport",
+    arrivalAirportName:
+      "Oshawa Executive Airport",
 
     origin: "CYXU",
     originName: "London International",
+
     destination: "CYOO",
-    destinationName: "Oshawa Executive Airport",
+    destinationName:
+      "Oshawa Executive Airport",
 
     aircraft: "C-GKLM",
     aircraftType: "Piper Archer",
@@ -582,12 +638,15 @@ export const flightData: Flight[] = [
     arrivalAirport: "CYKF",
 
     departureAirportName: "London International",
-    arrivalAirportName: "Region of Waterloo International",
+    arrivalAirportName:
+      "Region of Waterloo International",
 
     origin: "CYXU",
     originName: "London International",
+
     destination: "CYKF",
-    destinationName: "Region of Waterloo International",
+    destinationName:
+      "Region of Waterloo International",
 
     aircraft: "C-GMNO",
     aircraftType: "Cessna 172",
@@ -618,12 +677,15 @@ export const flightData: Flight[] = [
     arrivalAirport: "CYZR",
 
     departureAirportName: "London International",
-    arrivalAirportName: "Chris Hadfield Airport",
+    arrivalAirportName:
+      "Chris Hadfield Airport",
 
     origin: "CYXU",
     originName: "London International",
+
     destination: "CYZR",
-    destinationName: "Chris Hadfield Airport",
+    destinationName:
+      "Chris Hadfield Airport",
 
     aircraft: "C-GPQR",
     aircraftType: "Diamond DA40",
@@ -653,13 +715,18 @@ export const flightData: Flight[] = [
     departureAirport: "FSMS",
     arrivalAirport: "FSMS",
 
-    departureAirportName: "Flight School Simulator",
-    arrivalAirportName: "Flight School Simulator",
+    departureAirportName:
+      "Flight School Simulator",
+    arrivalAirportName:
+      "Flight School Simulator",
 
     origin: "FSMS",
-    originName: "Flight School Simulator",
+    originName:
+      "Flight School Simulator",
+
     destination: "FSMS",
-    destinationName: "Flight School Simulator",
+    destinationName:
+      "Flight School Simulator",
 
     aircraft: "SIM-01",
     aircraftType: "Flight Simulator",
@@ -668,7 +735,8 @@ export const flightData: Flight[] = [
     student: "Isabella King",
 
     flightType: "Simulator",
-    trainingType: "IFR Simulator Training",
+    trainingType:
+      "IFR Simulator Training",
 
     status: "Scheduled",
 
@@ -690,12 +758,15 @@ export const flightData: Flight[] = [
     arrivalAirport: "CYHM",
 
     departureAirportName: "London International",
-    arrivalAirportName: "John C. Munro Hamilton International",
+    arrivalAirportName:
+      "John C. Munro Hamilton International",
 
     origin: "CYXU",
     originName: "London International",
+
     destination: "CYHM",
-    destinationName: "John C. Munro Hamilton International",
+    destinationName:
+      "John C. Munro Hamilton International",
 
     aircraft: "C-GSTU",
     aircraftType: "Cessna 172",
@@ -726,12 +797,15 @@ export const flightData: Flight[] = [
     arrivalAirport: "CYKF",
 
     departureAirportName: "London International",
-    arrivalAirportName: "Region of Waterloo International",
+    arrivalAirportName:
+      "Region of Waterloo International",
 
     origin: "CYXU",
     originName: "London International",
+
     destination: "CYKF",
-    destinationName: "Region of Waterloo International",
+    destinationName:
+      "Region of Waterloo International",
 
     aircraft: "C-GVWX",
     aircraftType: "Diamond DA40",
@@ -762,12 +836,15 @@ export const flightData: Flight[] = [
     arrivalAirport: "CYOO",
 
     departureAirportName: "London International",
-    arrivalAirportName: "Oshawa Executive Airport",
+    arrivalAirportName:
+      "Oshawa Executive Airport",
 
     origin: "CYXU",
     originName: "London International",
+
     destination: "CYOO",
-    destinationName: "Oshawa Executive Airport",
+    destinationName:
+      "Oshawa Executive Airport",
 
     aircraft: "C-GABC",
     aircraftType: "Cessna 172",
@@ -798,12 +875,15 @@ export const flightData: Flight[] = [
     arrivalAirport: "CYHM",
 
     departureAirportName: "London International",
-    arrivalAirportName: "John C. Munro Hamilton International",
+    arrivalAirportName:
+      "John C. Munro Hamilton International",
 
     origin: "CYXU",
     originName: "London International",
+
     destination: "CYHM",
-    destinationName: "John C. Munro Hamilton International",
+    destinationName:
+      "John C. Munro Hamilton International",
 
     aircraft: "C-GDEF",
     aircraftType: "Cessna 172",
@@ -823,6 +903,12 @@ export const flightData: Flight[] = [
     notes: "Cross-country navigation.",
   },
 ];
+
+/*
+ * =========================================================
+ * FILTER OPTIONS
+ * =========================================================
+ */
 
 export const flightStatusOptions: FlightStatus[] = [
   "Scheduled",
@@ -876,6 +962,12 @@ export const flightDateOptions = [
   "This Week",
 ];
 
+/*
+ * =========================================================
+ * DATA ACCESS HELPERS
+ * =========================================================
+ */
+
 export function getFlightById(
   id: string,
 ): Flight | undefined {
@@ -888,7 +980,8 @@ export function getFlightsByStatus(
   status: FlightStatus,
 ): Flight[] {
   return flightData.filter(
-    (flight) => flight.status === status,
+    (flight) =>
+      flight.status === status,
   );
 }
 
@@ -896,6 +989,7 @@ export function getFlightsByDate(
   date: string,
 ): Flight[] {
   return flightData.filter(
-    (flight) => flight.date === date,
+    (flight) =>
+      flight.date === date,
   );
 }

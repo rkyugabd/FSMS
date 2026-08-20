@@ -3,7 +3,7 @@ import {
   CalendarDays,
   Mail,
   MapPin,
-  Phone,
+ 
   ShieldCheck,
   UserRound,
   X,

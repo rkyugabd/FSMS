@@ -1,3 +1,4 @@
+
 import {
   Plane,
   Plus,
@@ -694,43 +695,7 @@ export function Flights() {
           </div>
 
           <FlightDetails
-            flight={{
-              id: selectedFlight.id,
-              flightNumber:
-                selectedFlight.flightNumber,
-              status:
-                selectedFlight.status,
-              aircraft:
-                selectedFlight.aircraft,
-              aircraftType:
-                selectedFlight.aircraftType,
-              origin:
-                selectedFlight.departureAirport,
-              originName:
-                selectedFlight.departureAirport,
-              destination:
-                selectedFlight.arrivalAirport,
-              destinationName:
-                selectedFlight.arrivalAirport,
-              departureDate:
-                selectedFlight.date,
-              departureTime:
-                selectedFlight.departureTime,
-              arrivalDate:
-                selectedFlight.date,
-              arrivalTime:
-                selectedFlight.arrivalTime,
-              duration:
-                selectedFlight.duration,
-              instructor:
-                selectedFlight.instructor,
-              student:
-                selectedFlight.student,
-              trainingType:
-                selectedFlight.flightType,
-              notes:
-                selectedFlight.notes,
-            }}
+            flight={selectedFlight}
           />
 
           <div className="mt-3 flex justify-end gap-2">
@@ -740,6 +705,7 @@ export function Flights() {
                 setEditingFlight(
                   selectedFlight,
                 );
+
                 setSelectedFlight(
                   null,
                 );
@@ -789,43 +755,7 @@ export function Flights() {
           isOpen={
             editingFlight !== null
           }
-          flight={{
-            id: editingFlight.id,
-            flightNumber:
-              editingFlight.flightNumber,
-            status:
-              editingFlight.status,
-            aircraft:
-              editingFlight.aircraft,
-            aircraftType:
-              editingFlight.aircraftType,
-            origin:
-              editingFlight.departureAirport,
-            originName:
-              editingFlight.departureAirport,
-            destination:
-              editingFlight.arrivalAirport,
-            destinationName:
-              editingFlight.arrivalAirport,
-            departureDate:
-              editingFlight.date,
-            departureTime:
-              editingFlight.departureTime,
-            arrivalDate:
-              editingFlight.date,
-            arrivalTime:
-              editingFlight.arrivalTime,
-            duration:
-              editingFlight.duration,
-            instructor:
-              editingFlight.instructor,
-            student:
-              editingFlight.student,
-            trainingType:
-              editingFlight.flightType,
-            notes:
-              editingFlight.notes,
-          }}
+          flight={editingFlight}
           onClose={() =>
             setEditingFlight(null)
           }
@@ -859,7 +789,7 @@ export function Flights() {
                   editingFlight.arrivalAirport,
 
                 date:
-                  updatedDetails.departureDate ??
+                  updatedDetails.date ??
                   editingFlight.date,
 
                 departureTime:
@@ -887,7 +817,8 @@ export function Flights() {
                   editingFlight.flightType,
 
                 notes:
-                  updatedDetails.notes,
+                  updatedDetails.notes ??
+                  editingFlight.notes,
               };
 
             handleUpdateFlight(
@@ -901,3 +832,4 @@ export function Flights() {
 }
 
 export default Flights;
+
